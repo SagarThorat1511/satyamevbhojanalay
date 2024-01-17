@@ -1,0 +1,155 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding-top: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.active{
+    background-color: red;
+}
+.sidebar li:hover {
+    background-color: #555;
+}
+
+#logout{
+    background-color: red;
+    border: 1px solid red;
+    border-radius: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 60%;
+    font-size: 150%;
+    float: left;
+    margin-top:40vh ;
+}
+#logout:hover{
+    background-color: green;
+    border: none;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+.title {
+    display:flex;
+    /* justify-content: center; */
+    font-size: 150%;
+    
+}
+.title h2{
+    /* border: 1px solid red; */
+    width: 60%;
+    margin-left: 10%;
+    text-align: center;
+}
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4vh;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    height: 4vh;
+    width: 30%;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+}
+.search-button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+#main-content{
+    /* border: 1px solid red; */
+    height: 80vh;
+    padding: 2%;
+}
+
+.menu td{
+    border: 1px solid #070505;
+}
+.menu-box{
+      /* border: 1px solid black; */
+      height: 100%;
+      font-size: 100%;
+      /* padding: 20px; */
+      color: #000000;
+      transition: transform 0.3s ease-in-out;
+      text-align: center;
+}
+.title{
+    display: flex;
+    justify-content: center;
+}
+.menu-box h2 {
+    
+    margin-bottom: 20px;
+}
+.type{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:2vh 0 0 20%;
+    width: 60%;
+}
+
+.menu-box input {
+    width: 60%;
+    padding: 8px;
+    height: 5vh;
+    font-size: 100%;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.menu-box button {
+    background-color: #265879;
+    color: #fff;
+    height: 7vh;
+    width: 30%;
+    font-size: 100%;
+    margin-top: 3vh;
+    border-radius: 10px ;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-box button:hover {
+    background-color: #345bdb;
+}
+
+.menu-box.success {
+    transform: translateY(-100%);
+}

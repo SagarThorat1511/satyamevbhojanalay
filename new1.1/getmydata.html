@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="./css/getmydata.css">
+    <style>
+        /* Your styles here */
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li onclick="loadContent('todays_orders')" id="todays_orders" class="tab active">Today's Orders</li>
+            <li onclick="updateMenu()" id="updateMenu" class="tab">Update Menu</li>
+            <li onclick="loadContent('orders_history')" id="orders_history" class="tab">Orders History</li>
+            <li onclick="loadContent('customers')" id="customers" class="tab">Customers</li>
+            <li onclick="loadContent('pending_bills')" id="pending_bills" class="tab">Pending Bills</li>
+            <li onclick="logout()" id="logout" class="tab">Logout</li>
+        </ul>
+        
+    </div>
+    <div class="content">
+        <div class="title">
+            <h2>Home Tiffine Service</h2>
+            
+            <div class="search-box">
+                <input type="text" class="search-input" id="search-input" placeholder="Search...">
+                <button class="search-button" onclick="search()">Search</button>
+            </div>
+        </div>
+        <div id="main-content">
+            <!-- Table to display today's orders -->
+            <table id="displayTable" border="1">
+                <thead>
+                    <!-- Table header will be populated dynamically using JavaScript -->
+                </thead>
+                <tbody>
+                    <!-- Table body will be populated dynamically using JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <!-- Content will be loaded dynamically here -->
+    </div>
+    <div class=" content" id="updatemenu">
+        <div class="menu-box">
+            <div class="title">
+                 
+                <h2>Update Menu</h2>
+            </div>
+            <div class="form">
+
+                <form id="menuForm">
+                        <input type="text" id="menu1" name="menu" placeholder="Menu1" required>
+
+                        <input type="text" id="menu2" name="manu" placeholder="Menu2" required>
+                    <br>
+                    <div class="type">
+
+                        <label for="lunch">Lunch
+
+                            <input type="radio" id="lunch" name="type" value="lunch" required>
+                        </label>
+                        
+                        <label for="dinner">Dinner
+
+                            <input type="radio" id="dinner" name="type" value="dinner" required>
+                        </label>
+                        
+                    </div>
+                    <div class="btn">
+                        <button type="submit">Update Menu</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="BlockUIConfirm" class="BlockUIConfirm">
+        
+    </div>
+    <script src="./js/getmydata.js"></script>
+</body>
+<script>
+    document.getElementById('menuForm').addEventListener('submit', function(event) {
+ event.preventDefault();
+ 
+ const type = document.querySelector('input[name="type"]:checked').value;
+
+ const menu1 = document.getElementById('menu1').value;
+    const menu2 = document.getElementById('menu2').value;
+    menu(type,menu1,menu2);
+});
+
+ </script>
+</html>

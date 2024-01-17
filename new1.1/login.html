@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="title">
+                
+                <h2>Login</h2>
+            </div>
+            <div class="form">
+
+                <form id="loginForm">
+                        <input type="text" id="username" name="username" placeholder="Username" va required>
+                    
+                        <input type="password" id="password" name="password" placeholder="password" required>
+                    <br>
+                    <div class="btn">
+
+                        <button type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // Get values from the form
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Check if the entered credentials are correct
+    if (username === 'admin' && password === 'admin123') {
+        // For simplicity, assuming a successful login
+        document.querySelector('.login-box').classList.add('success');
+        localStorage.setItem('admin_authenticated', 'true');
+        window.location.href='getmydata.html';
+    } else {
+        // Display an "Unauthorized" message
+        alert('Unauthorized user. Please enter correct credentials.');
+    }
+});
+
+    </script>
+</body>
+</html>

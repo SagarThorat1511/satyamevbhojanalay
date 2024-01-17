@@ -1,0 +1,107 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.login-container {
+    background-color: #3498db;
+    /* border: 1px solid red; */
+    height: 80vh;
+    width: 50%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.login-box {
+
+    /* border: 1px solid black; */
+    height: 100%;
+    font-size: 200%;
+    padding: 20px;
+    color: #fff;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+.title{
+    display: flex;
+    justify-content: center;
+}
+.login-box h2 {
+    
+    margin-bottom: 20px;
+}
+
+.login-box label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 2wh;
+}
+
+.login-box input {
+    width: 80%;
+    padding: 8px;
+    height: 5vh;
+    font-size: 100%;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.login-box button {
+    background-color: #265879;
+    color: #fff;
+    height: 7vh;
+    width: 30%;
+    font-size: 100%;
+    margin-top: 10vh;
+    border-radius: 10px ;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background-color: #345bdb;
+}
+
+.login-box.success {
+    transform: translateY(-100%);
+}
+
+@media only screen and (max-width: 426px){
+    .login-container {
+        background-color: #3498db;
+        border: 1px solid red;
+        height: 70vh;
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    .login-box input {
+        width: 80%;
+        padding: 8px;
+        height: 5vh;
+        font-size: 100%;
+        margin-top: 10%;
+    }
+
+    .login-box button {
+        background-color: #265879;
+        color: #fff;
+        height: 10vh;
+        width: 50%;
+        font-size: 100%;
+        margin-top: 10vh;
+        border-radius: 10px ;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,221 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/1.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Home Tiffin Service</title>
+    
+</head>
+<body>
+    <!-- Full-screen popup -->
+    <div id="popup" class="popup-container">
+        <div class="popup-content">
+            <h2>We Are Off Today</h2>
+            <p>Sorry for the inconvenience. Our Bhojanalay is closed today. We'll be back soon!</p>
+        </div>
+    </div>
+    <div class="header">
+        <h1 id="title"></h1>
+    </div>
+    
+    <div class="gallery" id="gallery">
+        <!-- Gallery items with images included directly -->
+        
+        
+        <div class="gallery-item">
+            <div class="gallery-item-img" style="background-image: url(./images/1.png)"></div>
+            <div class="information">
+                
+                <h2>Full Rice Plate</h2>
+                <h3>Rs.80</h3>
+                <h5 id="full-rice-plate-selected"></h5>
+                
+                <p>One Subji + 3 Chapati + Dal-Rice + Salad/Papad</p>
+            </div>
+            <div class="quantity-input" id="full-rice-plate">
+                <button class="quantity-btn minus" onclick="decreaseQuantity('full-rice-plate')">-</button>
+                <input type="text" name="full Rice Plate-quantity" id="full-rice-plate-quantity" value=0 readonly>
+                <button class="quantity-btn plus" onclick="increaseQuantity('full-rice-plate')">+</button>
+            </div>
+            <div class="subji-select" id="full-rice-plate-select">
+                <button class="full-add-btn" onclick="costumizeSelect('full-rice-plate')">Add</button>
+            </div>
+        </div>
+        
+        <div class="gallery-item">
+            <div class="gallery-item-img" style="background-image: url(./images/2.png)"></div>
+            <div class="information">
+                <h2>Half Rice Plate</h2>
+                <h3>Rs.60</h3>
+                <h5 id="half-rice-plate-selected"></h5>
+                <p>One Subji + 3 Chapati + Salad/Papad</p>
+                
+            </div>
+            <div class="quantity-input" id="half-rice-plate">
+                <button class="quantity-btn minus" onclick="decreaseQuantity('half-rice-plate')">-</button>
+                <input type="text" name="Half Rice Plate-quantity" id="half-rice-plate-quantity" value=0 readonly>
+                <button class="quantity-btn plus" onclick="increaseQuantity('half-rice-plate')">+</button>
+            </div>
+            <div class="subji-select" id="half-rice-plate-select">
+                <button class="half-add-btn" onclick="costumizeSelect('half-rice-plate')">Add</button>
+            </div>
+        </div>
+        
+        <div class="gallery-item">
+            <div class="gallery-item-img" style="background-image: url(./images/3.png)"></div>
+            <div class="information">
+                
+                <h2>Chapati / Roti</h2>
+                <h3>Rs. 10</h3>
+                <h5 id="chapati-selected"></h5>
+                <p>Nutritious whole wheat chapati</p>
+            </div>
+            <div class="quantity-input" id="chapati">
+                <button class="quantity-btn minus" onclick="decreaseQuantity('chapati')">-</button>
+                <input type="text" name="chapati-quantity" id="chapati-quantity" value=0 readonly>
+                <button class="quantity-btn plus" onclick="increaseQuantity('chapati')">+</button>
+            </div>
+            <div class="subji-select" id="chapati-select">
+                <button class="full-add-btn" onclick="costumizeSelect('chapati')">Add</button>
+            </div>
+        </div>
+        
+        <div class="gallery-item">
+            <div class="gallery-item-img" style="background-image: url(./images/4.png)"></div>
+            <div class="addOninformation">
+                <h2>Add-On's</h2>
+            </div>
+            <div class="Add-On-input" id="Add-On">
+                
+                
+            </div>
+            <div class="subji-select" id="Add-On-select">
+                <button class="half-add-btn" onclick="costumizeSelect('Add-On')">Add</button>
+            </div>
+        </div>
+    </div>
+    <form id="orderForm">
+
+        <button type="button" onclick="placeOrder()">Confirm</button>
+    </form>
+    <div class="contact" style="font-size: 150%;    display: flex;
+    justify-content: center;
+    align-items: center;">
+        <p>Contact: 7350514061</p>
+    </div>
+    <div id="customizationModal" class="modal">
+        
+    </div>
+    <div id="addOnCustomizationModal" class="modal">
+        <div class="addOn-modal-content">
+            <span class="close" onclick="closecustomizationModal()">&times;</span>
+            <h2>Customize Your Item</h2>
+            <form id="customizationForm-Add-On">
+            <label>
+                <span id="menu1title"></span>
+                <span>Rs. 30</span>
+                <span class="add-on-input">
+                    <button type="button" onclick="decreaseQuantity('subji1')">-</button>
+                    <input type="text" name="subji1-quantity" id="subji1-quantity" value=0 readonly>
+                    <input type="text" name="subji1-customization" id="subji1-customization" value='' readonly hidden>
+                    <button type="button" onclick="increaseQuantity('subji1')">+</button>
+                </span>
+            </label>
+            <br>
+            <label>
+                <span id="menu2title"></span>
+                <span>Rs. 30</span>
+                <span class="add-on-input">
+                    <button type="button" onclick="decreaseQuantity('subji2')">-</button>
+                    <input type="text" name="subji2-quantity" id="subji2-quantity" value=0 readonly>
+                    <input type="text" name="subji2-customization" id="subji2-customization" value='' readonly hidden>
+                    <button type="button" onclick="increaseQuantity('subji2')">+</button>
+                </span>
+            </label>
+            <br>
+            <label>
+                <span>Rice</span>
+                <span>Rs. 30</span>
+                <span class="add-on-input">
+                    <button type="button" onclick="decreaseQuantity('rice')">-</button>
+                    <input type="text" name="rice-quantity" id="rice-quantity" value=0 readonly>
+                    <button type="button" onclick="increaseQuantity('rice')">+</button>
+                </span>
+            </label>
+            <br>
+            <label>
+                <span>Dal</span>
+                <span>Rs. 30</span>
+                <span class="add-on-input">
+                    <button type="button" onclick="decreaseQuantity('dal')">-</button>
+                    <input type="text" name="dal-quantity" id="dal-quantity" value=0 readonly>
+                    <button type="button" onclick="increaseQuantity('dal')">+</button>
+                </span>
+            </label>
+            <br>
+            <button type="button" onclick="applycustomizationModal('Add-On')">Save</button>
+            </form>
+            </div>
+    </div>
+    
+    <!-- Add this HTML for the confirmation modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cancelOrder()">&times;</span>
+        <h2>Confirm Your Order</h2>
+        <div id="modalContent"></div>
+        
+    </div>
+</div>
+<div id="initialFormModal" class="modal">
+    <div class="modal-content">
+        <h2>Welcome to Home Tiffin Service!</h2>
+        <form id="initialForm">
+            <label for="initialName">Name:</label>
+            <input type="text" id="initialName" required>
+            <br>
+            <label for="initialNumber">Mobile Number:</label>
+            <input type="text" id="initialNumber" required>
+            <br>
+            <label for="initialAddress">Address:</label>
+            <input type="text" id="initialAddress" required>
+            <br>
+                        <label for="initialBuilding">Building Name:</label>
+                        <input type="text" id="initialBuilding" required>
+                        <br>
+                        <label for="initialFlat">Flat Number:</label>
+                        <input type="text" id="initialFlat" required>
+                        <br>
+                        <button type="button" id="submitButton">Save</button>
+                    </form>
+                </div>
+</div>
+
+<script src="./js/app.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const popup = document.getElementById('popup');
+        const gallery=document.getElementById('on');
+    // Show the popup when the page loads
+    popup.style.display = 'none';
+    // gallery.style.display='flex';
+
+    // Close the popup when the "Close" button is clicked
+});
+// Check if the hard reload has already been executed
+const hasReloaded = localStorage.getItem('hasReloaded');
+
+if (!hasReloaded) {
+    // Perform a hard reload to clear cache and fetch new files
+    location.reload(true);
+
+    // Set the flag to indicate that the hard reload has been executed
+    localStorage.setItem('hasReloaded', 'true');
+}
+</script>
+</body>
+</html>
